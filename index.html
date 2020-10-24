@@ -14,7 +14,12 @@
 	<h1 id="morse code"> </h1>
 	<h1 id="feedback"> </h1>
 	<label for="letter">Listen to the morse code, then type the corresponding letter.</label>
-	<input type="text" id="letter" name="letter"> 
+	<br>
+	<input type="text" id="letter" name="letter">
+	<button type="button" name="play" id="play">Play</button>
 	<p>You got <span id="correct">0</span> out of <span id="total">0</span> correct.</p>
+	<audio id="audio" controls preload="auto" src="./audio/tone.mp3">Please use a newer browser.</audio>
+	<script src="scripts/key.js" charset="utf-8"></script>
+	<script src="scripts/script.js" charset="utf-8"></script>
 </body>
 </html>
