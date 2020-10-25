@@ -75,6 +75,12 @@ function onload() {
       }
     }
   };
+
+  document.getElementById("speed").value = 20;
+  document.getElementById("speed").oninput = function() {
+    speed = this.value / 10;
+    document.getElementById("speed-output").innerHTML = speed;
+  }
 }
 
 function updateDisplayStats() {
@@ -107,6 +113,9 @@ function toMorse(characters) {
 }
 
 async function player(morse) {
+  if (learningMode) {
+    document.getElementById("feedback").innerHTML = "<br>";
+  }
   if (playing) {return;}
   playing = true;
   let visual = document.getElementById("morse-code");
@@ -124,26 +133,27 @@ async function player(morse) {
     else { visual.innerHTML += morse.charAt(i); }
     let char = morse.charAt(i);
     if (char == ".") {
+      await sleep(100/speed);
       gainNode.gain.setTargetAtTime(0.6, context.currentTime, 0.01);
       await sleep(100/speed);
       gainNode.gain.setTargetAtTime(0, context.currentTime, 0.01);
-      await sleep(100/speed);
     }
-    if (char == "-") {
+    else if (char == "-") {
+      await sleep(100/speed);
       gainNode.gain.setTargetAtTime(0.6, context.currentTime, 0.01);
       await sleep(300/speed);
       gainNode.gain.setTargetAtTime(0, context.currentTime, 0.01);
-      await sleep(100/speed);
     }
-    if (char == " ") {
+    else if (char == " ") {
       await sleep(300/speed);
     }
-    if (char == "/") {
+    else if (char == "/") {
       await sleep(300/speed);
     }
   }
   audio.stop();
   playing = false;
+  document.getElementById("letter").value = "";
   if (learningMode) {
     document.getElementById("feedback").innerHTML = "Type " + currentChar.toUpperCase();
   }
