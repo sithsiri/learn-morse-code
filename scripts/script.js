@@ -127,22 +127,22 @@ async function player(morse) {
   audio.connect(gainNode);
   gainNode.connect(context.destination);
   audio.start();
-  fadeTime = 0.01;
+  fadeTime = 0.0025;
   for (let i = 0; i < morse.length; i++) {
     if (visual.innerHTML == "<br>") { visual.innerHTML = morse.charAt(i) }
     else { visual.innerHTML += morse.charAt(i); }
     let char = morse.charAt(i);
     if (char == ".") {
       await sleep(100/speed);
-      gainNode.gain.setTargetAtTime(0.6, context.currentTime, 0.01);
+      gainNode.gain.setTargetAtTime(0.6, context.currentTime, fadeTime);
       await sleep(100/speed);
-      gainNode.gain.setTargetAtTime(0, context.currentTime, 0.01);
+      gainNode.gain.setTargetAtTime(0, context.currentTime, fadeTime);
     }
     else if (char == "-") {
       await sleep(100/speed);
-      gainNode.gain.setTargetAtTime(0.6, context.currentTime, 0.01);
+      gainNode.gain.setTargetAtTime(0.6, context.currentTime, fadeTime);
       await sleep(300/speed);
-      gainNode.gain.setTargetAtTime(0, context.currentTime, 0.01);
+      gainNode.gain.setTargetAtTime(0, context.currentTime, fadeTime);
     }
     else if (char == " ") {
       await sleep(300/speed);
