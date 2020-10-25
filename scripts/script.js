@@ -12,8 +12,6 @@ let artificalDisable = false;
 let incorrectMode = false;
 
 function onload() {
-  document.getElementById("learning-mode").checked = false;
-
   document.getElementById("play").onclick = function() {
     if (init) {
       init = false;
