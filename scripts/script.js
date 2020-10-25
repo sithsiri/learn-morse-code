@@ -17,14 +17,13 @@ function onload() {
   document.getElementById("play").onclick = function() {
     if (init) {
       init = false;
-      document.getElementById("letter").style["display"] = "inline-block";
+      document.getElementById("letter").style["display"] = "block";
       document.getElementById("learning-mode").disabled = true;
       learningMode = document.getElementById("learning-mode").checked;
       if (!learningMode) {
         document.getElementById("counter").style["display"] = "block";
       }
     }
-
     player(morse);
     this.innerHTML = "Listen again";
   };
@@ -54,10 +53,10 @@ function onload() {
           correct++;
           total++;
           updateDisplayStats();
+          document.getElementById("feedback").innerHTML = "You got it! The answer was " + currentChar.toUpperCase() + ". Next!";
         }
         this.value = "";
         attempts = 3;
-        document.getElementById("feedback").innerHTML = "You got it! The answer was " + currentChar.toUpperCase() + ". Next!";
         newQuestion();
       }
     }
@@ -89,9 +88,6 @@ function updateDisplayStats() {
 function newQuestion() {
   currentChar = itukey.charAt(Math.random() * itukey.length);
   morse = toMorse(currentChar);
-  if (learningMode) {
-    document.getElementById("feedback").innerHTML = "Type " + currentChar.toUpperCase();
-  }
   player(morse);
 }
 
@@ -151,4 +147,7 @@ async function player(morse) {
   }
   audio.stop();
   playing = false;
+  if (learningMode) {
+    document.getElementById("feedback").innerHTML = "Type " + currentChar.toUpperCase();
+  }
 }

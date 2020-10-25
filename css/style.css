@@ -1,5 +1,5 @@
 .content {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 2em 10vw;
   text-align: center;
 }
@@ -30,4 +30,8 @@ h1, h2 {
 .button:hover {
   background-color: #e0e0ff;
   color: #101090;
+}
+
+#feedback {
+  font-family: 'Inconsolata', monospace;
 }
