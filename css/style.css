@@ -1,6 +1,8 @@
 .content {
   font-family: 'Open Sans', sans-serif;
-  margin: 2em 10vw;
+  margin: 2em auto;
+  min-width: 275px;
+  width: 60vw;
   text-align: center;
 }
 

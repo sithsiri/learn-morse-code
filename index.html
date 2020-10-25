@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Learn Morse Code</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="scripts/key.js" charset="utf-8"></script>
@@ -17,7 +18,14 @@
 		<h1>Learn Morse Code!</h1>
 		<label for="letter"><h2>Listen to the morse code, then type the corresponding letter.</h2></label>
 		<h1 id="morse-code"> </h1>
-		<p id="feedback"> </p>
+		<p id="feedback"><span style="font-family: 'Open Sans', sans-serif;">
+			This project aims to be a simple, easy-to-use Morse code practice game.
+			I haven't been able to find something similar to this and have been wanting to make it for a long time.
+			Its goals are to be simple and intuitive, and more useful than just staring at the charts.
+			<a href="https://github.com/sithsiri/learn-morse-code">Check out the code here,</a>
+			or just press start to learn Morse code!
+			For a bigger challenge, disable learning mode.
+		</span></p>
 		<input type="text" class="text-input" id="letter" name="letter" placeholder="type here" style="display: none; margin: auto;">
 		<button type="button" class="button" name="play" id="play">Start</button>
 		<p id="counter" style="display: none;">You got <span id="correct">0</span> out of <span id="total">0</span> correct.</p>
@@ -27,7 +35,7 @@
 		</div>
 		<label for="speed"><p style="margin-bottom: 6px;">Speed: <span id="speed-output">2</span></p></label>
 		<input type="range" min="5" max="40" value="20" class="slider" name="speed" id="speed">
-		<audio id="audio" preload="auto" src="./audio/tone.mp3">Please use a newer browser.</audio>
+		<audio id="audio" preload="auto">Please use a newer browser.</audio>
 	</div>
 </body>
 </html>
