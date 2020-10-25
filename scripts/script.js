@@ -53,7 +53,6 @@ function onload() {
           updateDisplayStats();
           document.getElementById("feedback").innerHTML = "You got it! The answer was " + currentChar.toUpperCase() + ". Next!";
         }
-        this.value = "";
         attempts = 3;
         newQuestion();
       }
