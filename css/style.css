@@ -1,3 +1,33 @@
-body {
+.content {
   font-family: sans-serif;
+  margin: 2em 10vw;
+  text-align: center;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.text-input {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-color: #101090;
+  width: 200px;
+}
+
+.button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border-color: #101090;
+  background-color: #101090;
+  color: #e0e0ff;
+  transition: 0.15s;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: 1em;
+  width: 228px;
+}
+.button:hover {
+  background-color: #e0e0ff;
+  color: #101090;
 }
